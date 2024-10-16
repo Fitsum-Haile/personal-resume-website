@@ -1,7 +1,8 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #222222;
+    font-size: 18px;
+    background-color: #333333;
     color: #F1F1F1;
     margin: 0;
     padding: 0;
@@ -9,7 +10,7 @@ body {
 
 /* Header Section */
 header {
-    background-color: #333333;
+    background-color: #222222;
     padding: 20px;
     text-align: left;
     color: #F1F1F1;

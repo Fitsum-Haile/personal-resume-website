@@ -1,5 +1,8 @@
-// Interactivity for Current Year in Footer
-document.getElementById('currentYear').textContent = new Date().getFullYear();
+// Safely update the current year if the element exists
+var currentYearElement = document.getElementById('currentYear');
+if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
+}
 
 // Hover effect for company links
 document.querySelectorAll('a').forEach(link => {
@@ -10,6 +13,25 @@ document.querySelectorAll('a').forEach(link => {
     link.addEventListener('mouseout', () => {
         link.style.color = '#FFCC00'; // Reverts back
         link.style.backgroundColor = 'transparent'; // Clears background
+    });
+});
+
+// Menu toggle functionality
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    var navbar = document.getElementById('navbar');
+    // Toggle the display property
+    if (navbar.style.display === 'block') {
+        navbar.style.display = 'none';
+    } else {
+        navbar.style.display = 'block';
+    }
+});
+
+// Optional: Close the menu when a link is clicked (useful for mobile)
+document.querySelectorAll('#navbar a').forEach(link => {
+    link.addEventListener('click', () => {
+        var navbar = document.getElementById('navbar');
+        navbar.style.display = 'none';
     });
 });
 
